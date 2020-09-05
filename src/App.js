@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useSelector } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Container } from './components/common/layout/layout'
+
+import { Control } from './components/Control/Control'
+import { Output } from './components/Output/Output'
+import { Editor } from './components/Editor/Editor'
+import { JsonModal } from './components/Json/Json.modal'
+
+export const App = () => {
+
+	const state = useSelector(state => state)
+	console.log(state)
+
+	return (
+		<>
+		<Container
+			w='80%'  
+			m='5% auto'
+			p='20px'
+			direction='column'
+			shadow
+		>
+			<Control />
+			<Output />
+		</Container>
+		<Editor />
+		<JsonModal />
+		</>
+	)
 }
 
-export default App;
