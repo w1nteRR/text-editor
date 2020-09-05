@@ -10,7 +10,6 @@ import { ColorSelect } from '../common/select/select.shared'
 import { useText } from '../../hooks/useText'
 import { openModal } from '../../redux/app/actions'
 
-
 export const Control = () => {
 
     const [text, setText] = useState('')
@@ -105,6 +104,8 @@ export const Control = () => {
                             title='Add text' 
                             bgColor='#0078F2'
                             click={() => {
+                                if(!text.length) return alert('Input is empty')
+                                
                                 add()
                                 setText('')
                             }} 

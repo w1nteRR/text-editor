@@ -14,9 +14,6 @@ export const useText = text => {
     const add = () => {
         const copy = [...texts]
         
-        // if(!inputVal) return alert('Empty input')
-        // if(fontSize.length > 4) return alert('Font size is too big')
-
         if(!texts.length) return dispatch(addTextToStore(text))
 
         const equalText = copy.filter(_filter)
